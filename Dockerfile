@@ -21,6 +21,10 @@ RUN echo "Install system packages" \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
+RUN echo "Install starship" \
+	&& curl -sS https://starship.rs/install.sh | sh -s -- --yes \
+	&& echo 'eval "$(starship init bash)"' >> /root/.bashrc
+
 RUN echo "Install docker" \
 	&& install -m 0755 -d /etc/apt/keyrings \
 	&& curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg \
