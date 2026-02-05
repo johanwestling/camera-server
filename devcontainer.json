@@ -1,0 +1,46 @@
+{
+	"build": {
+    "context": "../", 
+		"dockerfile": "Dockerfile"
+	},
+  "containerEnv": {
+    "SHELL": "/bin/bash",
+    "DEVCONTAINER_WORKSPACE": "${localWorkspaceFolder}"
+  },
+  "postCreateCommand": "./.devcontainer/lifecycle/postCreateCommand.sh",
+  "postStartCommand": "./.devcontainer/lifecycle/postStartCommand.sh",
+  "postAttachCommand": "./.devcontainer/lifecycle/postAttachCommand.sh",
+  "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind,consistency=cached", 
+  "workspaceFolder": "${localWorkspaceFolder}",
+	"mounts": [
+    {
+      // Mount docker socket from host.
+      "source": "/var/run/docker.sock",
+      "target": "/var/run/docker.sock",
+      "type": "bind"
+    },
+    {
+      // Mount git config from host.
+      "source": "${env:HOME}/.gitconfig",
+      "target": "/root/.host/.gitconfig",
+      "type": "bind"
+    },
+    {
+      // Mount ssh config from host.
+      "source": "${env:HOME}/.ssh",
+      "target": "/root/.host/.ssh",
+      "type": "bind"
+    }
+	],
+  "forwardPorts": [
+		// Define ports to be forwarded to host.
+	],
+  "customizations": {
+    // Define vscode extensions and settings.
+    "vscode": {
+      "extensions": [
+        "ms-vscode-remote.remote-containers"
+      ]
+    }
+  }
+}
