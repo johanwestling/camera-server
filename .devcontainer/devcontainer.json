@@ -14,21 +14,27 @@
   "workspaceFolder": "${localWorkspaceFolder}",
 	"mounts": [
     {
-      // Mount docker socket from host.
+      // Host docker socket.
       "source": "/var/run/docker.sock",
       "target": "/var/run/docker.sock",
       "type": "bind"
     },
     {
-      // Mount git config from host.
+      // Host ssh config.
+      "source": "${env:HOME}/.ssh",
+      "target": "/root/.host/.ssh",
+      "type": "bind"
+    },
+    {
+      // Host git config.
       "source": "${env:HOME}/.gitconfig",
       "target": "/root/.host/.gitconfig",
       "type": "bind"
     },
     {
-      // Mount ssh config from host.
-      "source": "${env:HOME}/.ssh",
-      "target": "/root/.host/.ssh",
+      // Devcontainer starship config.
+      "source": "${localWorkspaceFolder}/.devcontainer/config/starship/starship.toml",
+      "target": "/root/.config/starship.toml",
       "type": "bind"
     }
 	],

@@ -1,0 +1,16 @@
+add_newline = true
+format = '[#](dimmed) $directory$nodejs$git_branch$character'
+
+[directory]
+format = '$path '
+
+[nodejs]
+format = '[$version ](green)'
+
+[git_branch]
+format = '[$branch(:$remote_branch) ](purple)'
+
+[character]
+format = '$symbol'
+success_symbol = ''
+error_symbol = '[×](bold red) '
