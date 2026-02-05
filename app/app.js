@@ -2,7 +2,7 @@ try {
 	const server = import.meta.env.SERVER;
 	const camera = await navigator.mediaDevices.getUserMedia({
 		video: true,
-		audio: false,
+		audio: true,
 	});
 	const streamId = await cookieStore.get('streamid');
 	const stream = {
@@ -121,7 +121,7 @@ try {
 } catch (thrown) {
 	switch (true) {
 		case thrown?.name === 'NotAllowedError': {
-			alert('Camera access is required');
+			alert('Camera/microphone access is required');
 			break;
 		}
 

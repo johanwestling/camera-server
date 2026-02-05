@@ -1,7 +1,9 @@
 html {
+	background: #1e2029;
 	box-sizing: border-box;
 	font-size: 100%;
 	line-height: 1.5;
+	color: #a5b3c6;
 }
 
 :where(*, *::before, *::after){
@@ -29,16 +31,22 @@ body {
 	justify-items: center;
 	align-items: center;
 	align-content: center;
+	gap: 1em;
 }
 
 video {
-	width: 50vw;
-	aspect-ratio: 16 / 9;
-	background: black;
+	width: 75vw;
+	max-width: 1024px;
+	aspect-ratio: 16 / 10;
+	background: #000000;
 }
 
 label {
-	padding: 1em;
+	background: #000000;
+	padding-block: .25em;
+	padding-inline: .875em 1em;
+	border-radius: 99em;
+
 	display: flex;
 	align-items: center;
 	gap: .5em;
@@ -48,26 +56,21 @@ label {
 
 	&::before {
 		content: '';
-		width: .5em;
-		height: .5em;
-		background: black;
-		border: 1px solid #00000025;
+		width: .75em;
+		height: .75em;
+		background: #1e2029;
 		border-radius: 99em;
 	}
 
 	&:has(:checked){
 		&::before {
-			background: red;
 			animation: recording .4s ease alternate infinite;
 		}
 	}
 }
 
 @keyframes recording {
-	from {
-		background: black;
-	}
 	to {
-		background: red;
+		background: #cf2958;
 	}
 }
