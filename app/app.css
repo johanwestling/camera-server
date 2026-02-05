@@ -1,0 +1,73 @@
+html {
+	box-sizing: border-box;
+	font-size: 100%;
+	line-height: 1.5;
+}
+
+:where(*, *::before, *::after){
+	box-sizing: inherit;
+}
+
+:where(body, button, input, select, textarea){
+	font-family: monospace;
+	font-size: 1em;
+}
+
+:where([visually-hidden]) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+body {
+	min-height: 100dvh;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	align-content: center;
+}
+
+video {
+	width: 50vw;
+	aspect-ratio: 16 / 9;
+	background: black;
+}
+
+label {
+	padding: 1em;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+
+	font-weight: bold;
+	text-transform: uppercase;
+
+	&::before {
+		content: '';
+		width: .5em;
+		height: .5em;
+		background: black;
+		border: 1px solid #00000025;
+		border-radius: 99em;
+	}
+
+	&:has(:checked){
+		&::before {
+			background: red;
+			animation: recording .4s ease alternate infinite;
+		}
+	}
+}
+
+@keyframes recording {
+	from {
+		background: black;
+	}
+	to {
+		background: red;
+	}
+}

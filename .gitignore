@@ -1,0 +1,7 @@
+# App
+app/node_modules/
+
+# Server
+server/node_modules/
+server/streams/*
+!server/streams/.gitkeep
