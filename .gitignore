@@ -1,3 +1,2 @@
-app/node_modules/
 app/streams/*
 !app/streams/.gitkeep
