@@ -1,5 +1,5 @@
 try {
-	const server = import.meta.env.SERVER;
+	const server = location?.origin;
 	const camera = await navigator.mediaDevices.getUserMedia({
 		video: true,
 		audio: true,
