@@ -29,7 +29,7 @@ Records the devices camera stream and sends it to a node server for storage off-
 
 ## Localhost
 
-Setting up this project is easiest done with `docker compose`, either directly from terminal or from within the provided `devcontainer`.
+Setting up this project is easiest done with `docker compose`, either directly from terminal or from within the provided `devcontainer` (open `vscode` and click _"Reopen in container"_ when prompted).
 
 ### Installation
 
