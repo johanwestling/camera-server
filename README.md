@@ -35,46 +35,34 @@ Records the devices camera stream and sends it to a node server for storage off-
 
 Setting up this project is easiest done with `docker compose`, either directly from terminal or from within the provided `devcontainer`.
 
-### Container commands
-
-#### Create/recreate containers
+### Install app service
 
 ```bash
 docker compose up -d --force-recreate
 ```
 
-#### Start containers
+#### Start app service
 
 ```bash
 docker compose start
 ```
 
-#### Stop containers
+#### Stop app service
 
 ```bash
 docker compose stop
 ```
 
-### App commands
-
-#### Install dependencies
-
-```bash
-docker compose exec app npm ci
-```
-
-#### Start app in dev mode
+#### Start app server in dev mode
 
 ```bash
 docker compose exec app npm start
 ```
 
-### Server commands
-
-#### Start server in dev mode
+#### Start app server in prod mode
 
 ```bash
-docker compose exec server npm start
+docker compose exec app npm run server
 ```
 
 ## Selfhost
